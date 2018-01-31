@@ -20,7 +20,7 @@ test_environment:
 
 ## Run application
 server:
-	python3 app.py
+	python3 run.py
 
 ## Run the test suite
 test:
