@@ -1,9 +1,9 @@
-from flask_wtf import Form
+from flask_wtf import FlaskForm
 from wtforms import StringField
 from wtforms.widgets import TextArea
 from wtforms.validators import DataRequired
 
-class WordCountForm(Form):
-    text = StringField('Please enter a body of text:', validators=[
+class WordCountForm(FlaskForm):
+    text = StringField('Please enter input text:', validators=[
         DataRequired()
     ], widget=TextArea())
