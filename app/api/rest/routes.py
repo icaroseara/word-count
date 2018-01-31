@@ -12,5 +12,5 @@ class WordCount(BaseResource):
         data, errors = TextSchema().load(request.json)
         if errors: return errors
         given_text = data.get('text')
-        word_count = WordCounter(given_text).count_words()
+        word_count = WordCounter.count_words(given_text)
         return {'given_text': given_text, 'words_counted': word_count }
