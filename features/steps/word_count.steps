@@ -1,0 +1,29 @@
+from behave import given, when, then, step
+
+@given(u'system can calculate the number of words in a given text')
+def step_impl(context):
+  pass
+
+@when(u'I view the application')
+def step_impl(context):
+  pass
+
+@then(u'I see a form containing a text box to enter a body of text')
+def step_impl(context):
+    pass
+
+@when(u'I submit the form with some text')
+def step_impl(context):
+    pass
+
+@then(u'I see a result containing the number of words in the text-area')
+def step_impl(context):
+    pass
+
+@when(u'I submit the form with an empty text')
+def step_impl(context):
+    pass
+
+@then(u'I see a form error telling me that some text input is required')
+def step_impl(context):
+    pass
