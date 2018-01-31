@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block body %}
+    {% if session['word_count_response'] %}
+        <h2>Your input was received as:</h2>
+        <p>{{ session['given_text'] }}</p>
+        <p>The server has processed your input and returned this answer:</p>
+        <p><string>Word count was: {{ session['word_count'] }}</strong></p>
+        <a href="/api">back</a>
+    {% else %}
+        <form method="POST">
+            {{ form.csrf_token }}
+            <p>{{ form.text.label }}</p>
+            <p>{{form.text(cols="50", rows="4") }}</p>
+            {% if session['errors'] %}
+              <p>The <strong>text</strong> field is required.</p>
+            {% endif %}
+            <input type="submit" value="Submit">
+        </form>
+    {% endif %}
+{% endblock %}
